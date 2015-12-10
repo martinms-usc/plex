@@ -34,11 +34,7 @@ module.exports.getCoords = function(data) {
 
   for (var i = 0; i < data.length; i++) {
     if (data[i][3] && data[i][4]) {
-<<<<<<< 29150fd94ae38030f618eba24897d9e3bcdd2190
-      coords.push([data[i][1], data[i][0], data[i][3], data[i][4]]);
-=======
       coords.push({x_axis: data[i][0], y_axis: data[i][1], worst: data[i][2], best: data[i][3]});  
->>>>>>> [refactor] refactor middleware to return json
     } else {
       coords.push({x_axis: data[i][0], y_axis: data[i][1]});
     }
@@ -49,25 +45,13 @@ module.exports.getCoords = function(data) {
 }
 
 function runTimeAverage(userInput, dbInput, iterations) {
-<<<<<<< 29150fd94ae38030f618eba24897d9e3bcdd2190
-  console.log('U34-calculating runtime average for N=' + dbInput.length);
-
-  var times = [];
-  var total = 0;
-  var i = 0;
-  var averageRun;
-  var result;
-
-
-=======
   console.log('U34-calculating runtime average for N = ' + dbInput.length);
 
   var total = 0;
   var i = 0;
   var averageRun;
   var stats;
-  
->>>>>>> [refactor] refactor middleware to return json
+
   while (i < iterations) {
     stats = getRunTime(userInput, dbInput);
     total += stats[1];
